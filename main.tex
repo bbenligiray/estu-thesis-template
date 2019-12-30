@@ -1,0 +1,95 @@
+\input{tex/Preamble}
+
+% Parameters
+\newcommand{\paramyear}{20XX}
+\newcommand{\parammonth}{MONTH}
+\newcommand{\parammonthtr}{AY}
+\newcommand{\paramdate}{XX/XX/20XX}
+\newcommand{\paramauthor}{Name SURNAME}
+\newcommand{\paramtitle}{CAPITALIZED TITLE}
+\newcommand{\paramtitletwo}{Normal Title}
+\newcommand{\paramtitletr}{CAPITALIZED TITLE IN TURKISH}
+\newcommand{\paramsphd}{1} % 0 for MSc, 1 for PhD
+\newcommand{\paramsupervisor}{Prof. Dr. Name SURNAME}
+\newcommand{\paramjurytwo}{Prof. Dr. Name SURNAME}
+\newcommand{\paramjurythree}{Doç. Dr. Name SURNAME}
+\newcommand{\paramjuryfour}{Doç. Dr. Name SURNAME} % leave empty if MSc
+\newcommand{\paramjuryfive}{Dr. Öğr. Üyesi Name SURNAME} % leave empty if MSc
+\newcommand{\paraminstitutehead}{Prof. Dr Name SURNAME}
+\newcommand{\parambap}{XXX} % comment out if there's no BAP
+\newcommand{\paramdept}{Electrical and Electronics Engineering}
+\newcommand{\paramdepttr}{Elektrik-Elektronik Mühendisliği}
+\newcommand{\paramprogram}{Program in English}
+\newcommand{\paramprogramtr}{Progran in Turkish}
+% Parameters
+
+\begin{document}
+\addtocontents{toc}{~\hfill\underline{\textbf{Page}}\par}
+\addtocontents{lof}{~\hfill\underline{\textbf{Page}}\par}
+\addtocontents{lot}{~\hfill\underline{\textbf{Page}}\par}
+
+\input{tex/CoverPage}
+
+\thispagestyle{empty} % no page number in inner cover
+\pagenumbering{roman}
+\phantomsection % these are needed for hyperref to work properly (maybe not for newer versions)
+\input{tex/InnerCoverPage}
+
+\thispagestyle{empty} % no page number in approval page
+\begin{otherlanguage}{turkish}
+\phantomsection
+\input{tex/Approval}
+
+\phantomsection
+\input{0-Ozet}
+\end{otherlanguage}
+
+\phantomsection
+\input{0-Abstract}
+
+\begin{otherlanguage}{turkish}
+\phantomsection
+\input{tex/Statement}
+\end{otherlanguage}
+\shorthandoff{=} % put this when Turkish ends
+
+\phantomsection
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
+\renewcommand\contentsname{\normalsize\begin{center}TABLE OF CONTENTS	\end{center}}
+\tableofcontents
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\renewcommand\listtablename{\hfill\normalsize LIST OF TABLES\hfill}
+\listoftables
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\renewcommand\listfigurename{\hfill\normalsize LIST OF FIGURES\hfill}
+\listoffigures
+\newpage
+
+\phantomsection
+\input{tex/Abbreviations}
+
+\pagenumbering{arabic}
+
+\input{1-Introduction}
+% new chapters go here
+\input{2-Conclusion}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{REFERENCES}
+\renewcommand\bibname{\hfill REFERENCES \hfill}
+\bibliographystyle{ieeetr}
+\bibliography{ref}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{CV}
+\includepdf[pages=-]{cv/main}
+
+\end{document}

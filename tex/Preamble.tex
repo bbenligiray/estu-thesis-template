@@ -1,0 +1,67 @@
+%%% Formatting
+\documentclass[a4paper,12pt]{report}
+\usepackage[left=3.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage[font={small},labelfont=bf]{caption}
+\setlength\parindent{1cm}
+
+\usepackage{tocloft} % For TOC style
+\renewcommand\cftchapaftersnum{.}
+\renewcommand\cftchapdotsep{\cftdotsep}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\bfseries}
+\renewcommand{\cftsubsecpagefont}{\bfseries}
+\renewcommand{\cftsubsubsecfont}{\bfseries\itshape}
+\renewcommand{\cftsubsubsecpagefont}{\bfseries}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\usepackage{titlesec} % For header styles
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+\titleformat{\chapter}{\normalsize\bfseries}{\thechapter.}{12pt}{\normalsize\bfseries}
+\titlespacing*{\chapter}{0pt}{12pt}{12pt}
+\titleformat{\section}{\normalsize\bfseries}{\thesection.}{12pt}{\normalsize\bfseries}
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{12pt}{\normalsize\bfseries}
+\titlespacing*{\subsection}{0pt}{12pt}{12pt}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection. }{12pt}{\normalsize\bfseries\itshape}
+\titlespacing*{\subsubsection}{0pt}{12pt}{12pt}
+\titleformat{\paragraph}{}{}{12pt}{\normalsize\bfseries\itshape}
+\titlespacing*{\paragraph}{0pt}{12pt}{12pt}
+
+\setlength{\cftfigindent}{0pt}
+\renewcommand{\cftfigpresnum}{\bfseries Figure }
+\settowidth{\cftfignumwidth}{Figure 00.00}
+
+\setlength{\cfttabindent}{0pt}
+\renewcommand{\cfttabpresnum}{\bfseries Table }
+\settowidth{\cfttabnumwidth}{Table 00.00}
+%%% Formatting
+
+
+
+%%% Packages
+\usepackage{graphicx}
+\usepackage{setspace} % for spacing environment
+\usepackage{array} % For Juri.tex
+\usepackage{notoccite} % prevents cites in list of figures etc. from messing up reference ordering
+\usepackage{hyperref}
+\usepackage{times} % needed for linux
+\usepackage{pdfpages} % to add CV
+\usepackage{subfig}
+\usepackage{tabu}
+%%% Packages
+
+
+
+%%% Turkish stuff
+\usepackage[utf8]{inputenc} % Turkish characters
+\usepackage[turkish,english]{babel} % Turkish hyphenation
+%%% Turkish stuff

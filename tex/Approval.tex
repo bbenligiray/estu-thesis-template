@@ -1,0 +1,39 @@
+\addcontentsline{toc}{chapter}{FINAL APPROVAL FOR THESIS}
+\begin{center}
+\textbf{FINAL APPROVAL FOR THESIS}
+\end{center}
+\vspace{3\baselineskip}
+
+This thesis titled \textbf{``\paramtitletwo"} has been prepared and submitted by \textbf{\paramauthor} in partial fullfillment of the requirements in
+``Eskişehir Technical University Directive on Graduate Education and Examination" for
+the Degree of \if\paramsphd1
+Doctor of Philosophy (PhD)
+\else
+Master of Science (MSc)
+\fi in Department of \paramdept~has been examined and approved on \paramdate.
+
+\vspace{3\baselineskip}
+
+% https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% https://tex.stackexchange.com/questions/50352/inserting-a-small-vertical-space-in-a-table
+\setlength\extrarowheight{0.2\baselineskip}
+
+\noindent
+\begin{tabular}{L{0.27\textwidth} L{0.43\textwidth} C{0.2\textwidth}}
+	\textbf{\underline{Committee Members}} & \textbf{\underline{Title, Name and Surname}} & \textbf{\underline{Signature}} \\
+	Member (Supervisor) & \paramsupervisor & \dotfill \\
+	Member & \paramjurytwo & \dotfill \\
+	Member & \paramjurythree & \dotfill \\
+	\if\paramsphd1
+	Member & \paramjuryfour & \dotfill \\
+	Member & \paramjuryfive & \dotfill \\
+	\fi
+\end{tabular}
+\vspace{4\baselineskip}
+
+\hspace{0.42\textwidth} \parbox{0.5\textwidth}{\centering \dotfill \\ \paraminstitutehead \\ Director of Institute of Graduate Programs}
+
+\newpage

@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[left=3.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\setlength\parindent{1cm}
+
+\usepackage{tabu}
+\usepackage[style=ieee,backend=bibtex]{biblatex}
+
+\bibliography{../ref}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\vspace{3\baselineskip}
+\begin{center}
+	\textbf{CV}
+\end{center}
+\vspace{2\baselineskip}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\noindent
+\begin{tabular}{L{0.3\textwidth} L{0.75\textwidth}}
+	Name: & NAME \\
+	Foreign Languages: & LANGUAGES \\
+	Birth date and place: & DATE, PLACE \\
+	E-mail: & MAIL
+\end{tabular}
+
+\vspace{2\baselineskip}
+
+\noindent
+\underline{Education}
+\begin{itemize}
+	\item PhD (20XX--20XX), UNIVERSITY, DEPARTMENT
+	\item MSc (20XX--20XX), UNIVERSITY, DEPARTMENT
+	\item BSc (20XX--20XX), UNIVERSITY, DEPARTMENT
+\end{itemize}
+
+\noindent
+\underline{Employment}
+\begin{itemize}
+	\item POSITION (20XX--), ORGANIZATION
+	\item POSITION (20XX--20XX), ORGANIZATION
+\end{itemize}
+
+\noindent
+\underline{Publications}
+\begin{itemize}
+	\item \fullcite{paper1}
+	\item \fullcite{paper2}
+\end{itemize}
+
+\end{document}
